@@ -1,0 +1,146 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Packages/Dokumentart %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[ a4paper,	% Papierart
+	%       10pt,		%
+		11pt,		% Schriftgröße
+	%	12pt,		%
+		pdftex,		% PDF Umwandlung
+	%	twoside		% 2-seitig
+		] {report}	% Dokumenttyp Bericht
+
+\usepackage[ngerman]{babel}	% Deutsches Sprachpaket/Silbentrennung etc.
+\usepackage[utf8]{inputenc}	% verwendeter Codec (für Umlaute)
+\usepackage[left=26mm,right=26mm,top=26mm,bottom=26mm]{geometry}
+\usepackage{graphicx}		% für Bilder
+\usepackage{cite}		% für bestimmte Zitierfunktionen
+\usepackage[footnote]{acronym}	% für Abkürzungen in Fußnote
+\usepackage{caption}		% Um Bildunterschriften zu konfigurieren (mit, ohne erscheinen im Abkürzungsverzeichnis)
+\usepackage{setspace}		% für Zeilenabstand
+
+\onehalfspacing			% ab hier Zeilenabstand 1,5
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kopfzeile %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[automark]{scrpage2}			% Package für Kopfzeile	
+\pagestyle{scrheadings} 			% Pagestyle
+\automark[section]{chapter} 			% für Anzeigen des Unterkapitels (Standard Überkapitel)
+\clearscrheadfoot \ihead{\headmark}		% ihead links, ohead rechts, chead mitte
+\setheadsepline{0.4pt}				% Linie unter Kopfzeile
+\cfoot[\pagemark]{\pagemark}			% Mitte Fußzeile Seitenzahl (selbe wie mit head (i,o,c))
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abkürzungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Persöhnlich
+\newcommand{\Autor}{Steffen Kurstak und Julian Kühn}
+\newcommand{\MatrikelNummer}{Matrikelnummer}
+\newcommand{\Kursbezeichnung}{TINF11B3}
+%Firma
+\newcommand{\dhLogo}{\includegraphics[width=4cm]{Bilder/dhbw-logo.png}}
+%Betreuer
+\newcommand{\BetreuerDHBW}{Dr. Ralf Brune}
+%Art der Arbeit
+%\newcommand{\Was}{Praxisbericht}
+%\newcommand{\WasErklaerung}{den vorliegenden \Was}
+\newcommand{\Was}{Studienarbeit}
+\newcommand{\WasErklaerung}{die vorliegende \Was}
+%\newcommand{\Was}{Studienarbeit}
+%\newcommand{\WasErklaerung}{die vorliegende \Was}
+%\newcommand{\Was}{Bachelorarbeit}
+%\newcommand{\WasErklaerung}{die vorliegende \Was}
+%Deckblatt Infos
+\newcommand{\Titel}{Analyse und Implementierung eines Honeypot-Systems}
+\newcommand{\Dauer}{12 Wochen}
+\newcommand{\Abschluss}{Bachelor of Engineering}
+\newcommand{\Studiengang}{Informationstechnik}
+\newcommand{\AbgabeDatum}{1. April 2013}
+
+\begin{document}   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titelseite %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{singlespace}							% Zeilenabstand für Titelseite verringern
+\begin{titlepage}
+\begin{center}								% Referenzpunkt Seitenmitte
+\vspace*{-2cm}								% 2 cm nach Links Platz lassen
+\dhLogo\\[2cm]
+{\Huge \Titel}\\[2cm]							% \Huge, \Large, \large sind versch. Schriftgrößen \bfseries ist Fett gedruckt
+{\Huge\scshape \Was}\\[2cm]						% [] Inhalt ist Abstand zur nächsten Zeile
+{\large f\"ur die Pr\"ufung zum}\\[0.5cm]
+{\Large \Abschluss}\\[0.5cm]
+{\large des Studienganges \Studiengang}\\[0.5cm]
+{\large an der}\\[0.5cm]
+{\large Dualen Hochschule Baden-W\"urttemberg Karlsruhe}\\[0.5cm]
+{\large von}\\[0.5cm]
+{\large\bfseries \Autor}\\[1cm]
+{\large Abgabedatum \AbgabeDatum}
+\vfill									% ermöglicht es unterhalb der Seitengrenze zu schreiben
+\end{center}								% Referenzpunkt Mitte beenden
+
+\begin{tabular}{l@{\hspace{2cm}}l}					% Beginn Tabelle mit einer Spalte nach der 2cm Platz gelassen wird bevor die nächste beginnt
+Bearbeitungszeitraum	         & \Dauer 			\\
+Matrikelnummer	                 & \MatrikelNummer		\\
+Kurs			         & \Kursbezeichnung		\\
+Gutachter der Studienakademie	 & \BetreuerDHBW		\\
+\end{tabular}								% Tabelle abschließen
+\end{titlepage}
+\end{singlespace}								% Titelseite abschließen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Erklärung
+\input{Anhang/erklaerung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kurzzusammenfassung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+\begin{onehalfspace}
+
+Hier steht eine Kurzzusammenfassung.
+
+\end{onehalfspace}
+\end{abstract} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Verzeichnisse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Anhang/Sperrvermerk.tex}
+
+\begin{singlespace}			 % Zeilenabstand für Verzeichnisse 1	
+\tableofcontents 			 % Inhaltsverzeichnis
+\listoffigures	 			 % Abbildungsverzeichnis
+\listoftables				 % Tabellenverzeichnis
+\end{singlespace}	 		 % Zeilenabstand wieder ausstellen
+%\listofequations			 % Formelverzeichnis
+%\listoflistings 			 % Listenverzeichnis
+\input{Anhang/abkuerzungsverzeichnis.tex} %Abkuerzungsverzeichnis
+\newpage %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kapitel einbinden %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Kapitel/1/Kapitel10.tex}
+\newpage
+
+\input{Kapitel/2/Kapitel20.tex}
+\newpage
+
+\input{Kapitel/3/Kapitel30.tex}
+\newpage
+
+\input{Kapitel/4/Kapitel40.tex}
+\newpage
+
+\input{Kapitel/5/Kapitel50.tex}
+\newpage
+
+\input{Kapitel/6/Kapitel60.tex}
+\newpage
+
+\input{Kapitel/7/Kapitel70.tex}
+\newpage
+
+\input{Kapitel/8/Kapitel80.tex}
+\newpage
+
+\input{Kapitel/9/Kapitel90.tex}
+\newpage
+
+\input{Anhang/anhang.tex}				% Anhang Einbinden
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\bibliographystyle{gerabbrv}				% Zitierformat (deutsch für Großschreibung) [Häufigkeit] im Text
+\bibliography{Literaturverzeichnis}			% Pfad des Literaturverzeichnisses
+
+\end{document}  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,18 @@
+\section{Anforderungen eines Honeynets}
+\noindent Die Anforderungen eines Honeynets kann grob ich drei Kategorien unterteilt werden:\\
+\\
+\textbf{Data Control: }Datenkontrolle bedeutet, dass der Betreiber eines Honeypots oder Honeynets die Kontrolle der ein- und ausgehenden Datenpakete behält. Gelingt es dem Hacker dem Honeynetbetreiber diese Kontrolle zu entreißen, besteht die Möglichkeit, dass der Hacker einen Angriff auf das Produktivnetz startet. 
+Die Datenkontrolle muss für den Angreifer unsichtbar sein. Zu strenge Sicherheitsvorkehrungen können den Hacker jedoch verunsichern und ihn auf den Honeypot aufmerksam machen (z.B. ausgehende Verbindungen blockieren). Jedoch kann z.B. eine Limitierung der ausgehenden Verbindungen ein gutes Mittel gegen den Verlust den Datenkontrolle sein. \\
+\\
+\textbf{Data Capture: }Die Informationen, die ein Hacker während eines Angriffes hinterlässt, müssen möglichst reichhaltig und unauffällig dokumentiert werden. Für die Datensammlung gibt es verschiedene Möglichkeiten die Aktionen eine Hackers aufzuzeichnen.
+\begin{itemize}
+\item Packet Sniffing: Zum aufzeichnen des kompletten Netzverkehrs (ein- und ausgehende Pakete).
+\item Keystroke Logging: Das aufzeichnen der vom Hacker ausgeführten Tastenanschläge.
+\item Snapshot Software: Vergleicht Betriebssystem vor- und nach der Kompromittierung und hält die Änderungen fest.
+\item Log-Dateien wie z.B. Log-Daten eines Netzwerkgerätes wie Switch und Router
+\end{itemize} 
+Wichtig bei diesen Programmen ist es, dass sie für den Hacker nicht ersichtlich sein dürfen. Findet der Angreifer eines dieser Programme ist dieser alarmiert und wird die Flucht ergreifen.\\
+\\
+\textbf{Data Collection: }Bei einem verteilten System wie z.B. bei einem Honeynet muss es eine zentrale Stelle geben in der die Informationen gesammelt und gespeichert werden. Daten werden nie direkt auf einem Honeypot protokolliert, sondern an ein zentrales System übertragen. Wichtig hierbei ist es, dass die Daten sicher und unverändert an das System übertragen werden. Der Angreifer soll nicht die Möglichkeit haben einen Angriff zu vertuschen, oder gar das System selbst anzugreifen. \\
+\\
+\textbf{Data Analysis: }Die gewonnenen Informationen müssen dem Zweck entsprechend ausgewertet werden. Je nach Ziel des Honeypots müssen z.B. Gegenmaßnahmen getroffen, oder aus dem gelernten Wissen Schlüsse gezogen werden, um in Zukunft eine Kompromittierung eines Produktivsystems zu verhindern.
