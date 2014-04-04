@@ -1,16 +1,18 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces VResearch Honeypot - Variante I\relax }}{9}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Research Honeypot - Variante II\relax }}{9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Production Honeypot\relax }}{10}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces VResearch Honeypot - Variante I\relax }}{10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Research Honeypot - Variante II\relax }}{10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Production Honeypot\relax }}{11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces GenI Honeynet\relax }}{16}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces GenII Honeynet\relax }}{17}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces GenI Honeynet\relax }}{17}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces GenII Honeynet\relax }}{18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Kommunikation \IeC {\"u}ber das OSI-Schichtenmodell\relax }}{24}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Drei-Wege-Handshake mit TCP\relax }}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Beispielkonfiguration einer Honeyd Config-Datei\relax }}{23}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Beispielkonfiguration einer Honeyd Config-Datei\relax }}{29}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
