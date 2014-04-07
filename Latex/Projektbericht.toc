@@ -33,8 +33,8 @@
 \contentsline {section}{\numberline {6.1}Honeypot und Honeynet Tools}{27}
 \contentsline {subsection}{\numberline {6.1.1}Sebek}{27}
 \contentsline {subsection}{\numberline {6.1.2}Intrusion Detection System}{27}
-\contentsline {section}{\numberline {6.2}Honeypot Software}{28}
-\contentsline {subsection}{\numberline {6.2.1}Honeyd}{28}
+\contentsline {section}{\numberline {6.2}Honeypot Software}{29}
+\contentsline {subsection}{\numberline {6.2.1}Honeyd}{29}
 \contentsline {subsection}{\numberline {6.2.2}Kommerziell}{30}
 \contentsline {subsection}{\numberline {6.2.3}Roo}{30}
 \contentsline {subsection}{\numberline {6.2.4}Virtuelle Honeypots}{30}

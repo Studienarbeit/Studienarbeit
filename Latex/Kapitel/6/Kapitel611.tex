@@ -1,1 +1,8 @@
 \subsection{Sebek}
+Sebek ist ein Kernel basiertes Tool, welches die Daten eines Angreifers auf dem Host-System mitliest und loggt. Zu beginn der Überwachung von Host-Systemen wurden häufig Netzwerk-Sniffer verwendet, die alle Pakete zwischen Angreifer und Honeypot mitgelesen haben und somit sowohl den Input als auch den Output rekonstruieren konnten. In der heutigen Zeit wird es immer schwieriger an Daten wie beispielsweise Tastenanschläge zu kommen. Viele Hacker benutzen verschlüsselte Verbindungen zwischen ihren Opfer-Systemen und umgehen dadurch einem Netzwerk-Sniffer. 
+
+Aus dieser Not heraus entwickelte The Honeynet Project das Tool Sebek. Da ein verschlüsselt übertragener Tastenanschlag, bevor er von dem System interpretiert werden kann, entschlüsselt werden muss, konzentriert sich das Tool auf den System-Kernel. Da jeder User Space früher oder später den Kernel Space nutzt, manipuliert Sebek den Pointer für die Methode read(), welcher in der Syscall Tabelle hinterlegt ist. Der Pointer zeigt jetzt auf eine von Sebek manipulierte read() Methode, welche vollen Zugriff auf die für diesen Syscall mitgelieferten Daten hat.
+
+<<Bild>>
+
+\cite{project.2003b}
