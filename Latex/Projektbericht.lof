@@ -1,7 +1,7 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces VResearch Honeypot - Variante I\relax }}{10}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Research Honeypot - Variante I\relax }}{10}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Research Honeypot - Variante II\relax }}{10}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Production Honeypot\relax }}{11}
 \addvspace {10\p@ }
@@ -12,7 +12,10 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Kommunikation \IeC {\"u}ber das OSI-Schichtenmodell\relax }}{24}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Drei-Wege-Handshake mit TCP\relax }}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Beispielkonfiguration einer Honeyd Config-Datei\relax }}{29}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Abfangen der Daten durch Sebek\cite {project.2003b}\relax }}{28}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Zugriff auf Netzwerk Driver\cite {project.2003b}\relax }}{28}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Ablauf einer Sebek-\IeC {\"U}berwachung\cite {project.2003b}\relax }}{29}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Beispielkonfiguration einer Honeyd Config-Datei\relax }}{31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
