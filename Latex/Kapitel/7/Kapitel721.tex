@@ -1,1 +1,12 @@
 \subsection{Installation}
+Die zum Zeitpunkt der Studienarbeit aktuelle Version von Honeyd ist 1.5c. Diese Version wurde am 27.05.2007 veröffentlicht und ist demnach recht veraltet. Die Webseite von Niels Provos zu diesem Projekt wurde zuletzt am 15.07.2008 bearbeitet, demnach davon ausgegangen werden kann das er das Projekt nicht mehr weiter verfolgt. Honeyd ist jedoch mit Einschränkungen auf den meisten Unixartigen System lauffähig.
+Vor der Installation des eigentlichen Honeyd Deamons müssen einige Abhängigkeiten installiert werden:\\
+\\
+\noindent\textbf{libdnet:}\\
+libdnet ist eine Programmbibliothek die Zugriff auf low-level Netzwerkroutinen gewährt. Dazu gehören z.B. Netzwerkadressmanipulation, Netzwerkfirewallmanipulation, Netzwerinterfacezugriff, IP-Tunneling und Zugriff auf einzelne IP-Pakete.\\\\
+\noindent\textbf{libevent:}\\
+libenvent ist eine Programmbibliothek, die eine asynchrone Benachrichtigungsfunktion besitzt, die bei bestimmten Events oder nach vordefinierten Timeouts ausgelöst werden kann.\\\\
+\noindent\textbf{libpcap:}\\
+libpcpa ist eine freie Programmierschnittstelle zur Überwachung des Netzverkehrs. Viele Netzwerkanalysetools greifen auf die Funktion von pcpa (packet capture) Bibliotheken zurück. libpcap ist eine Programmbibliothek für unixartige System, WinPcap besitzt für Windows Betriebssysteme die selbe Funktion. Wireshark, Snort und Nmap greifen z.B. auf die selbe Schnittstelle zurück.\\
+\\
+Für erweiterte Funktionen wurde das Paket Honeyd-commmons ebenfalls heruntergeladen. In diesem befinden sich zusätzliche Dokumentationen und Skripte für die Nachahmung verschiedener Services. Nach der Installation aller notwendiger Pakete müssen Konfigurationen für den Deamon erstellt werden.
