@@ -1,0 +1,61 @@
+\section{Datenanalyse}
+Nach einer erfolgreichen Kompromittierung eines Angreifers muss unabhängig des verwendeten Honeypotsystems eine Datenanalyse stattfinden. Abhängig des eigentlichen Nutzen des Honeypots für das Netzwerk kann eine Netzwerkanalyse mehr oder weniger aufwendig werden. Wird ein Honeypot als Early-Warning System verwendet wird eine aufwendige Datenanalyse nicht nötig sein. Wird er jedoch als Research Honeypot verwendet, oder ein und die selbe Sicherheitslücke wird auf längere Zeit mehrmalig ausgenutzt, so wird eine ordentlich durchgeführte Datenanalyse notwendig. Folgende Merkmale bestimmen ob eine ausführliche Datenanalyse nach einer Kompromittierung durchgeführt werden soll\cite{grimes.2003a}:
+
+\begin{itemize}	
+\item Was ist der eigentliche Zweck des Honeypots? (Production oder Research)
+\item Was wird versucht zu schützen?
+\item Ist jeder Angriff interessant oder nur die die erfolgreich sind?
+\item Ist die Angriffsmethode interessant?
+\item Soll herausgefunden werden wer der Hacker ist? Welcher Tools, Techniken oder Mechanismen dieser verwendet?
+\item Ist nur die Methode des Zugriffs auf den Honeypot interessant oder auch das was der Hacker auf diesen vorhatte?
+\end{itemize}
+
+Allgemein sollte bei einer ausführlichen Datenanalyse (wenn z.B. wie im Falle des Projektes ein Research Honeypot verwendet wird) folgende drei Fragen geklärt werden:
+
+\begin{itemize}
+\item War der Angriff manuell oder automatisch?
+\item Wie fand die initiale Kompromittierung statt?
+\item Was macht der Hacker nachdem er sich Zugriff verschafft hat?
+\end{itemize}
+
+\noindent Automatisierte Angriffe kommen häufiger vor als manuelle. Manuelle Kompromittierungsversuche sind jedoch um einiges Gefährlicher als automatisierte, da der Angreifer unerwartet seine Strategie ändern, und unberechenbar auf seinem Zielsystem handeln kann. Automatisierte Angriffe nutzen meist bekannte Sicherheitslücken aus, und hoffen dabei bei einer neue Anwendung eine Zero-Day-Attack auszuführen (nutzt Sicherheitslücken aus die die Programmierer bei der erstmaligen Erscheinung eines Programmes noch nicht behoben haben). 
+Automatisierte Angriffe sind relativ einfach an folgenden Eigenschaften erkennbar:
+\begin{itemize}
+\item Schnelle Zugriffsversuche auf verschieden Art und Weise(zeitlich sehr nah beieinander)
+\item Ports oder Exploits, die nicht für das eigene System verfügbar sind werden ausprobiert
+\item Dieselbe Zugriffsmethode wird in kurzer Zeit mehrmals ausgeführt, ohne das eine Änderung von Parametern stattfindet
+\item Das Tippen ist so schnell das kein Mensch dazu fähig wäre 
+\end{itemize}
+
+\noindent Im Gengenzug dazu sind manuelle Hacker durch folgende Merkmale erkennbar:
+
+\begin{itemize}
+\item Der verwendetet Exploit Code passt zu dem Zielsystem
+\item Wesentlich häufiger vorkommende Tippfehler und wiederholende Eingaben
+\item Zeitabstände zwischen Eingaben sind ungleichmäßig
+\item Versucht häufig vorher Informationen zu sammeln (Ping, Portscan)
+\end{itemize}
+
+\noindent \textbf{Initialer Zugriff auf das System}\\
+Die meisten Angriffe bestehen aus zwei verschiedenen Phasen. Das Ziel der ersten Phase besteht darin, Zugriff auf das System zu erhalten, das Ziel der zweite um die eigentlichen Absichten zu verfolgen.
+
+\noindent \textbf{Nach dem Zugriff}\\
+Der meist wichtigere Teil der Datenanalyse ist der Teil der nach der initialen Kompromittierung stattfindet. Das Ziel ist es herauszufinden, was die Absichten des Hackers waren, welche Daten er gesucht hat (z.B. Kreditkartendaten, Werbeinformationen)oder welche Daten er hinterlassen hat. Meist versucht der Hacker den kompromittierten Rechner als Speicherplatz (für z.B. illegale Daten wie DVDs oder Spiele), oder als Teil eines Botnetzes zu verwenden. \\
+
+\noindent Die Möglichkeiten eines Hackers sind vielfältig, deswegen gibt es(je nach Genauigkeit der Analyse) mehr oder weniger aufwendige Analysearten. Diese sind durch die Implementierungsart des Honeypots meist mit eingeschränkt:\\
+\newpage
+\noindent\textbf{Low-Interactive Honeypots}\\
+Bei Low-Interactive Honeypots hält sich die Datenauswertung in Grenzen. Meist bietet sich nur die Möglichkeit, den Netzwerkverkehr, IDS Log-Files und die Honeypot Log-Files zu analysieren. MEHR!\\
+
+\noindent\textbf{High-Interactive Honeypots}\\
+\noindent High-Interactive Honeypots bieten eine hohen Informationsgehalt bei der Datenanalyse. Diese ist jedoch im Vergleich zu den anderen Honeypot Implementierungsarten sehr aufwendig. Für eine ausführliche Analyse sind folgende Schritte notwendig\cite{grimes.2003a}:
+
+\begin{itemize}
+\item Den Honeypot aus dem Netz entfernen
+\item RAM Speicherinhalte falls möglich sichern
+\item Eine Kopie der Festplatte erstellen
+\item Netzwerkverkehr, Dateisystem, Schadcode (falls vorhanden), Betriebssystem, Log-Daten analysieren
+\item Schlüsse daraus ziehen (Sicherheitslücken erkennen)
+\item Sicherheitslücken schließen/Honeypot modifizieren (falls gewünscht)
+\item Honeypot wieder neu aufsetzen
+\end{itemize}
