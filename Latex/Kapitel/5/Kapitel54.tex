@@ -37,7 +37,7 @@ Automatisierte Angriffe sind relativ einfach an folgenden Eigenschaften erkennba
 \end{itemize}
 
 \noindent \textbf{Initialer Zugriff auf das System}\\
-Die meisten Angriffe bestehen aus zwei verschiedenen Phasen. Das Ziel der ersten Phase besteht darin, Zugriff auf das System zu erhalten, das Ziel der zweite um die eigentlichen Absichten zu verfolgen.
+Die meisten Angriffe bestehen aus zwei verschiedenen Phasen. Das Ziel der ersten Phase besteht darin, Zugriff auf das System zu erhalten, das Ziel der zweite um die eigentlichen Absichten zu verfolgen.\\
 
 \noindent \textbf{Nach dem Zugriff}\\
 Der meist wichtigere Teil der Datenanalyse ist der Teil der nach der initialen Kompromittierung stattfindet. Das Ziel ist es herauszufinden, was die Absichten des Hackers waren, welche Daten er gesucht hat (z.B. Kreditkartendaten, Werbeinformationen)oder welche Daten er hinterlassen hat. Meist versucht der Hacker den kompromittierten Rechner als Speicherplatz (für z.B. illegale Daten wie DVDs oder Spiele), oder als Teil eines Botnetzes zu verwenden. \\
@@ -50,12 +50,18 @@ Bei Low-Interactive Honeypots hält sich die Datenauswertung in Grenzen. Meist b
 \noindent\textbf{High-Interactive Honeypots}\\
 \noindent High-Interactive Honeypots bieten eine hohen Informationsgehalt bei der Datenanalyse. Diese ist jedoch im Vergleich zu den anderen Honeypot Implementierungsarten sehr aufwendig. Für eine ausführliche Analyse sind folgende Schritte notwendig\cite{grimes.2003a}:
 
-\begin{itemize}
+\begin{enumerate}
 \item Den Honeypot aus dem Netz entfernen
 \item RAM Speicherinhalte falls möglich sichern
 \item Eine Kopie der Festplatte erstellen
 \item Netzwerkverkehr, Dateisystem, Schadcode (falls vorhanden), Betriebssystem, Log-Daten analysieren
 \item Schlüsse daraus ziehen (Sicherheitslücken erkennen)
 \item Sicherheitslücken schließen/Honeypot modifizieren (falls gewünscht)
-\item Honeypot wieder neu aufsetzen
-\end{itemize}
+\item Honeypot neu aufsetzen
+\end{enumerate}
+
+\noindent\textbf{Den Honeypot offline nehmen}\\
+\noindent Um eine forensische Analyse an einem Honeypot vorzunehmen, muss zunächst sicher gestellt werden, dass sich dieser nicht mehr im Netz befindet. So wird sichergestellt, dass niemand mehr weitere Modifikationen am Honeypot vornehmen kann. Außerdem kann der Angreifer ab dem Zeitpunkt, an dem die Verbindung gekappt wurde, nicht mehr seine Spuren verwischen, oder gar entdecken das er sich auf einem Honeypot befindet. In diesem Fall kann er seine Taktik ändern und eventuell versuchen das System zu beschädigen oder sogar die Festplatte zu formatieren.\\
+
+\input{Kapitel/5/Kapitel541.tex}
+\input{Kapitel/5/Kapitel542.tex}
