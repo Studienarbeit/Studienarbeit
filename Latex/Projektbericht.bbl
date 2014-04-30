@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{tannensbaum.2012a}
+{\sc Andrew S.~Tanenbaum, P. D. J.~W.}: {\em Computernetzwerke\/}.
+\newblock Pearson, 2012.
+
+\bibitem{dornseif.2012a}
+{\sc Dornseif, M.}: {\em Ermittlung von Verwundbarkeiten mit elektronischen
+  Koedern\/}.
+\newblock
+  \url{http://www.ei.rub.de/media/emma/veroeffentlichungen/2012/08/24/Koeder-DIMVA04.pdf},
+  2012.
+
+\bibitem{erickson.2009a}
+{\sc Erickson, J.}: {\em Hacking - Die Kunst des Exploits\/}.
+\newblock dpunkt, 2009.
+
+\bibitem{project.2003b}
+{\sc Project, T.~H.}: {\em Know Your Enemy: Sebek\/}.
+\newblock \url{http://old.honeynet.org/papers/sebek.pdf}, 2003.
+
+\bibitem{grimes.2003a}
+{\sc Roger~A., G.}: {\em Honeypots for Windwos\/}.
+\newblock Apress, 2003.
+
+\bibitem{spitzner.2002a}
+{\sc Spitzner, L.}: {\em Honyepots - Tracking Hackers\/}.
+\newblock Addison-Wesley, 2002.
+
+\end{thebibliography}
