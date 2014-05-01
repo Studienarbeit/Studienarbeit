@@ -1,13 +1,28 @@
 \subsection{GenI Honeynet}
-Bei einem GenI Honeypot wird das gesamte Netz durch eine Firewall in drei Teile unterteilt. Der erste Teil ist das Produktivnetz indem sich das zentrale Management System befindet. Der zweite Teil ist das Internet, welcher das Zugangsmedium des Angreifers darstellt. Der dritte und letzte Teil ist das Honeynet. 
+Bei einem GenI Honeynet wird das gesamte Netz durch eine Firewall in drei Teile unterteilt. Der erste Teil ist das Produktivnetz indem sich das zentrale Management System befindet. Der zweite Teil ist das Internet, welcher das Zugangsmedium des Angreifers darstellt. Der dritte und letzte Teil ist das Honeynet\cite{WebGenI.2006b}. 
 
-Der Prozess der Datensammlung beginnt bereits mit passieren der Firewall. Dort können Informationen wie die verwendeten Protokolle, Zeitstempel,IP-Adressen und Ports gesammelt werden. Außerdem wird hier kontrolliert wie oft der Angreifer eine Verbindung eingehen kann (Data Control). Wie viele Versuche zugelassen werden hängt vom Verwendungszweck des Honeynets ab. Der Router zwischen Honeynet und Firewall unterstützt diese auf zwei verschiedene weisen. Zum Einem versteckt er die Firewall vor dem Hacker. Der Angreifer denkt, er greift auf einen produktiven Router zu. Zum Anderen unterstützt er die Firewall in Sachen Zugriffskontrolle. So kann ein Single-Point-of-Failure vermieden werden. 
+GenI Honeynets gelten als die ersten richtigen High-Interactive Honeypots, da sie weit mehr Informationen als normale Honeypot, und unbekannte Angriffe aufzeichnen können\cite{spitzner.2002a}.
 
-Ein IDS-System steht nun noch zwischen dem Angreifer und den Honeypots. Dieses ist meist über einen Switch (oder wie in Abb. \ref{hnet:geni} mit einem Router) mit dem gesamten Honeynet verbunden. Dort werden alle Netzwerkaktivitäten protokolliert und bei bestimmten Angriffsmustern gegebenenfalls ein Alarm ausgelöst. 
-\\
+Der Prozess der Datensammlung beginnt bereits mit passieren der Firewall. Dort können Informationen wie die verwendeten Protokolle, Zeitstempel,IP-Adressen und Ports gesammelt werden. Außerdem wird hier kontrolliert wie oft der Angreifer eine Verbindung eingehen kann (Data Control). Wie viele Versuche zugelassen werden hängt vom Verwendungszweck des Honeynets ab. Der Router zwischen Honeynet und Firewall unterstützt diese auf zwei verschiedene weisen. Zum Einem versteckt er die Firewall vor dem Hacker. Der Angreifer denkt, er greift auf einen produktiven Router zu. Zum Anderen unterstützt er die Firewall in Sachen Zugriffskontrolle. So kann ein Single-Point-of-Failure vermieden werden\cite{grimes.2003a}\cite{WebGenI.2006b}. 
+
+Ein \acf{IDS}-System steht nun noch zwischen dem Angreifer und den Honeypots. Dieses ist meist über einen Switch (oder wie in Abb. \ref{hnet:geni} mit einem Router) mit dem gesamten Honeynet verbunden. Dort werden alle Netzwerkaktivitäten protokolliert und bei bestimmten Angriffsmustern gegebenenfalls ein Alarm ausgelöst\cite{spitzner.2002a}. 
+
 \begin{figure}[ht]
     \centering\includegraphics[scale=0.5]{Bilder/GenI.pdf}
   \caption{GenI Honeynet}
   \label{hnet:geni}
 \end{figure}
-\\
+
+\noindent Die GenI Technologie bietet sich besonders an, um automatisierte oder Anfänger-Hacks zu erkennen. Meist handelt es sich dabei um Ziele, deren Schwachstelle zufällig entdeckt wird, und es dadurch zu einem Angriff kommt. 
+Die Architektur ist nicht effektiv für fortgeschrittene Angreifer, oder Hacker, die ein bestimmtes System angreifen wollen. Zum einen sind diese relativ einfach über einen Fingerprint ausfindig zu machen, zum Anderen bestehen sie meist aus einer Standardinstallation eines Betriebssystems, weswegen sie für Angreifer meist uninteressant wirken\cite{spitzner.2002a}.\\
+
+\noindent\textbf{Methoden zur Datenkontrolle}\\
+\noindent Die Datenkontrolle eines GenI Honeypots besteht im Grunde aus der Layer 3 Firewall, die das Produktivnetz vom Honeynet trennt. Die Firewall erlaubt jeglichen Zugriff in das Netz, limitiert jedoch die ausgehenden Verbindungen (nicht Pakete). Der Firewall wird vom Administrator eine Grenze für ausgehende Verbindungen mitgeteilt, nach erreichen dieser wird jeder ausgehender Verbindungsversuch geblockt. Je mehr Verbindungen erlaubt sind, desto mehr Freiheiten hat der Hacker seine Aktionen durchzuführen. Um den Schaden zu minimieren die der Hacker verursacht, kann auch eine geringe Grenze gewählt werden. Automatisierte Attacken können so z.B. weiterhin festgestellt werden. Das Honeynet Project empfiehlt hierfür die Linux Firewall IPTables oder als kommerzielle Version FireWall-1 \cite{spitzner.2002a}.\\
+
+\noindent\textbf{Methoden zur Datenaufzeichnung}\\
+\noindent Die Datenaufzeichnung eines GenI Honeynets muss, wie zuvor definiert (vgl. Kapitel 3.1), für den Angreifer unsichtbar sein. Die Daten, die gesammelt werden, dürfen nicht lokal auf dem Honeypot gespeichert werden. Um dies zu verwirklichen werden die Daten in verschiedenen Schichten.
+Die erste Schicht ist die Logging-Aktivität auf der Firewall. Alle Daten, die in das Honeynet gelange, müssen zunächst durch die Firewall. Dort können zwar keine Informationen wie Tastendrücke oder Packet-Payloads aufgezeichnet werden, jedoch können Protokoll Header, in denen sich Informationen wie Zeitpunkt, Quell- und Zieladresse sowie Quell- und Zielport befinden, ausgelesen und aufgezeichnet werden\cite{spitzner.2002a}. 
+
+Die zweite Schicht ist das IDS-System, welches mit dem Produktivnetz und dem Honeynet jeweils mit einem Interface verbunden ist. Das Interface, dass mit dem Honeynet verbunden ist besitzt keine IP-Adresse. Es gilt als passives Interface (rote Linie in Abb. \ref{hnet:geni}), welches den kompletten Datenverkehr des Honeynets aufzeichnet, jedoch keine Angriffsfläche für den Hacker bietet, da es keine IP-Adresse besitzt. Das zweite Interface erlaubt es dem Administrator im Produktivnetz auf die gesammelten Daten zuzugreifen. Das IDS zeichnet die kompletten Datenpakete mit Payload auf und stellt diese später für eine Datenanalyse zur Verfügung. Die zweite Aufgabe des IDS ist es, eine Warnung bei ungewöhnlichen Aktivitäten zu geben.
+
+Die dritte Schicht stellen die Honeypots selbst dar. Alle System und 

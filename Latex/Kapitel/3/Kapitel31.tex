@@ -1,18 +1,49 @@
 \section{Anforderungen eines Honeynets}
-\noindent Die Anforderungen eines Honeynets kann grob ich drei Kategorien unterteilt werden:\\
-\\
-\textbf{Data Control: }Datenkontrolle bedeutet, dass der Betreiber eines Honeypots oder Honeynets die Kontrolle der ein- und ausgehenden Datenpakete behält. Gelingt es dem Hacker dem Honeynetbetreiber diese Kontrolle zu entreißen, besteht die Möglichkeit, dass der Hacker einen Angriff auf das Produktivnetz startet. 
-Die Datenkontrolle muss für den Angreifer unsichtbar sein. Zu strenge Sicherheitsvorkehrungen können den Hacker jedoch verunsichern und ihn auf den Honeypot aufmerksam machen (z.B. ausgehende Verbindungen blockieren). Jedoch kann z.B. eine Limitierung der ausgehenden Verbindungen ein gutes Mittel gegen den Verlust den Datenkontrolle sein. \\
-\\
-\textbf{Data Capture: }Die Informationen, die ein Hacker während eines Angriffes hinterlässt, müssen möglichst reichhaltig und unauffällig dokumentiert werden. Für die Datensammlung gibt es verschiedene Möglichkeiten die Aktionen eine Hackers aufzuzeichnen.
+\noindent Um ein effektives Honeynet zu erstellen, müssen verschiedenen Anforderungen erfüllt werden. Diese Anforderungen können Honeynets grob ich drei Kategorien unterteilt werden\cite{spitzner.2002a}:\\
+
+\noindent\textbf{Data Control: }\\
+Datenkontrolle bedeutet, dass der Betreiber eines Honeypots oder Honeynets die Kontrolle der ein- und ausgehenden Datenpakete behält. Gelingt es dem Hacker dem Honeynetbetreiber diese Kontrolle zu entreißen, besteht die Möglichkeit, dass der Hacker einen Angriff auf das Produktivnetz oder über das Internet startet. Da es sich bei der Datenkontrolle um ein großes Sicherheitsrisiko handelt sollte versucht werden folgende Punkte einzuhalten\cite{spitzner.2002a}:
+\begin{itemize}
+\item Datenkontrolle sollte automatisiert, jedoch auch manuell stattfinden
+\item Die Datenkontrolle sollte mindestens durch zwei Schichten kontrolliert werden (falls eine Anwendung nicht erfolgreich sein sollte)
+\item Alle ein- und ausgehenden Verbindungen sollten kontrollierbar bleiben
+\item Jede unautorisierte Aktion soll kontrollierbar sein, ein anderes System im Produktivnetz darf nicht angreifbar sein
+\item Die Datenkontrolle muss jederzeit durch den Administrator konfigurierbar sein
+\item Verbindungen sollen für den Angreifer so schwer wie möglich erkannt werden
+\item Mindestens zwei Benachrichtungsmöglichkeiten bei Aktivitäten im Honeynet
+\item Auf die Datenkontrolle muss über einen Remote-Zugriff zugegriffen werden können
+\end{itemize}
+\noindent Die Datenkontrolle muss für den Angreifer unsichtbar sein. Zu strenge Sicherheitsvorkehrungen können den Hacker jedoch verunsichern und ihn auf den Honeypot aufmerksam machen (z.B. ausgehende Verbindungen blockieren). Jedoch kann z.B. eine Limitierung der ausgehenden Verbindungen ein gutes Mittel gegen den Verlust den Datenkontrolle sein\cite{WebHnet.2006b}\cite{spitzner.2002a}. \\
+
+\noindent\textbf{Data Capture: }\\
+\noindent Die Informationen, die ein Hacker während eines Angriffes hinterlässt, müssen möglichst reichhaltig und unauffällig dokumentiert werden. Für die Datensammlung gibt es verschiedene Möglichkeiten die Aktionen eine Hackers aufzuzeichnen\cite{grimes.2003a}.
 \begin{itemize}
 \item Packet Sniffing: Zum aufzeichnen des kompletten Netzverkehrs (ein- und ausgehende Pakete).
 \item Keystroke Logging: Das aufzeichnen der vom Hacker ausgeführten Tastenanschläge.
-\item Snapshot Software: Vergleicht Betriebssystem vor- und nach der Kompromittierung und hält die Änderungen fest.
+\item Snapshot Software: Vergleicht Betriebssystemkonfigurationen vor- und nach der Kompromittierung und hält die Änderungen fest.
 \item Log-Dateien wie z.B. Log-Daten eines Netzwerkgerätes wie Switch und Router
 \end{itemize} 
-Wichtig bei diesen Programmen ist es, dass sie für den Hacker nicht ersichtlich sein dürfen. Findet der Angreifer eines dieser Programme ist dieser alarmiert und wird die Flucht ergreifen.\\
-\\
-\textbf{Data Collection: }Bei einem verteilten System wie z.B. bei einem Honeynet muss es eine zentrale Stelle geben in der die Informationen gesammelt und gespeichert werden. Daten werden nie direkt auf einem Honeypot protokolliert, sondern an ein zentrales System übertragen. Wichtig hierbei ist es, dass die Daten sicher und unverändert an das System übertragen werden. Der Angreifer soll nicht die Möglichkeit haben einen Angriff zu vertuschen, oder gar das System selbst anzugreifen. \\
-\\
-\textbf{Data Analysis: }Die gewonnenen Informationen müssen dem Zweck entsprechend ausgewertet werden. Je nach Ziel des Honeypots müssen z.B. Gegenmaßnahmen getroffen, oder aus dem gelernten Wissen Schlüsse gezogen werden, um in Zukunft eine Kompromittierung eines Produktivsystems zu verhindern.
+Wichtig bei diesen Programmen ist es, dass sie für den Hacker nicht ersichtlich sein dürfen. Findet der Angreifer eines dieser Programme ist dieser alarmiert und wird die Flucht ergreifen\cite{spitzner.2002a}.
+Das Honeynet-Project definiert eine effektive Datenanalyse wie folgt:\cite{spitzner.2002a}
+\begin{itemize}
+\item Keine aufgezeichneten Honeypot-Daten dürfen lokal auf diesen gespeichert werden (diese könnten vom Angreifer erkannt und modifiziert werden). Als Honeypot-Daten zählen alle Daten die bezüglich des Honeypots und dessen Umgebung aufgezeichnet werden.
+\item Folgende Aktivitäten müssen ein Jahr lang aufgezeichnet werden: Netzwerkaktivitäten, Systemaktivitäten, Anwendungsaktivitäten und Benutzeraktivitäten.
+\item Der Honeypot oder Honeynet Administrator muss jederzeit ortsunabhängig auf aufgezeichnete Daten Zugreifen können.
+\item Aufgezeichnete Daten müssen für zukünftige Analysen automatisch archiviert werden.
+\item Für jeden aktive Honeypot muss eine standardisierte Log-Datei existieren.
+\item Für jeden kompromittierten Honeypot muss ein standardisierte Log-Datei existieren.
+\item Alle gesammelten Daten müssen die GMT Zeitzone verwenden. Daten können zwar mit der lokalen Zeitzone aufgezeichnet werden, müssen jedoch für eine Analyse in das GMT Zeitformat konvertiert werden.
+\item Anwendungen, die zur Aufzeichnung von Aktivitäten dienen, müssen sicher gegen Modifikationen sein, um die Integrität der aufgezeichneten Daten sicherzustellen.
+\end{itemize}
+
+\noindent\textbf{Data Collection: }\\
+\noindent Bei einem verteilten System wie z.B. bei einem Honeynet muss es eine zentrale Stelle geben, in der die Informationen gesammelt und gespeichert werden. Daten werden nie direkt auf einem Honeypot protokolliert, sondern an ein zentrales System übertragen. Wichtig hierbei ist es, dass die Daten sicher und unverändert an das System übertragen werden. Der Angreifer soll nicht die Möglichkeit haben einen Angriff zu vertuschen, oder gar das System selbst anzugreifen\cite{WebHnet.2006b}. Die Anforderungen an die Datensammlung kann in vier Elemente unterteilt werden\cite{spitzner.2002a}:
+\begin{itemize}
+\item Jeder Honeypot im Honeynet soll in der Sammlung identifizierbar sein. Dies kann z.B. durch eine Art \acf{IP/DNS} gemappte Datenbank erreicht werden.
+\item Die Daten müssen vom Honeypot sicher auf das Sammelnde System übertragen werden. Die Integrität der Daten darf nicht während der Übertragung verändert werden können.
+\item Eine Möglichkeit zur Anonymisierung der Daten. 
+\item Eine Standardisiertes \acf{NTP}, um sicherzustellen dass alle Daten richtig synchronisiert wurden.
+\end{itemize}
+
+\noindent\textbf{Data Analysis: }\\
+\noindent Die gewonnenen Informationen müssen dem Zweck entsprechend ausgewertet werden. Je nach Ziel des Honeypots müssen z.B. Gegenmaßnahmen getroffen, oder aus dem gelernten Wissen Schlüsse gezogen werden, um in Zukunft eine Kompromittierung eines Produktivsystems zu verhindern\cite{WebHnet.2006b}.
