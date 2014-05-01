@@ -1,5 +1,5 @@
 \subsection{Netzwerkanalyse}
-Mit einer Netzwerkanalyse kann am schnellsten erkannt werden, was auf einem Honeypot passiert ist. Die Netzwerkanalyse kann grundsätzlich auf zwei Wege genutzt werden. Zum einem kann erkannt werden welche Ports verwendet wurden, zum anderen kann über die Payload der Pakete nach Details geforscht werden. Wenn der übertragenen Datenverkehr nicht verschlüsselt ist, kann ein Packet-Sniffer (z.B. WireShark) den kompletten Verkehr aufzeichnen. Fragen, die sich bei der Netzwerkanalyse stellen, sind:
+Mit einer Netzwerkanalyse kann am schnellsten erkannt werden, was auf einem Honeypot passiert ist. Die Netzwerkanalyse kann grundsätzlich auf zwei Wege genutzt werden. Zum einem kann erkannt werden welche Ports verwendet wurden, zum anderen kann über die Payload der Pakete nach Details geforscht werden. Wenn der übertragenen Datenverkehr nicht verschlüsselt ist, kann ein Packet-Sniffer (z.B. Wireshark oder Argus) den kompletten Verkehr aufzeichnen. Fragen, die sich bei der Netzwerkanalyse stellen, sind:
 
 \begin{itemize}
 \item Wie viele Pakete wurden aufgezeichnet
@@ -10,8 +10,10 @@ Mit einer Netzwerkanalyse kann am schnellsten erkannt werden, was auf einem Hone
 \item Wie groß waren die Pakete
 \end{itemize} 
 
-\noindent Da bei einem länger aktiven Honeypot eine sehr große Menge an Daten in Log-Files gespeichert werden können, sollte sich nicht auf jeden einzelne Kommunikationsvorgang, sondern eher auf die \emph{top talker} (diejenigen, die am meisten kommuniziert haben) geachtet werden. Packet-Sniffer bieten meist die Möglichkeit nach bestimmten Ziel- oder Quell Adressen, Ports oder Protokollen zu filtern. Der zeitliche Abstand verdächtiger Pakete kann Auskunft geben, ob ein Angriff automatisch oder manuell stattfand. Häufig sind Angriffe, die innerhalb von kurzen Zeitintervallen stattfinden, automatisiert. 
-Außerdem sollte auf die Paketgröße geachtet werden. Kleine Pakete sind meist Handshake- Broadcast- oder Protocol-overhead Pakete, und können (je nach zu analysierenden Angriff) ignoriert werden. 
+\noindent Ein sehr weit verbreitetes Packet-Sniffer Programm ist tcpdump. Dieses Kommandozeilentool (erhältlich auch für Windows unter dem Namen windump) zeichnet TCP, UDP und ICMP Nachrichten auf und speichert diese in einer Datei. Für eine Aufzeichnung auf einem Honeypot bieten sich Kommandozeilentools mehr an als z.B. das schwergewichtige Wireshark.
+
+\noindent Da bei einem länger aktiven Honeypot eine sehr große Menge an Daten in Log-Files gespeichert werden können, sollte sich nicht auf jeden einzelne Kommunikationsvorgang, sondern eher auf die \emph{top talker} (diejenigen, die am meisten kommuniziert haben) geachtet werden. Komplexere Packet-Sniffer bieten meist die Möglichkeit nach bestimmten Ziel- oder Quell Adressen, Ports oder Protokollen zu filtern. Deswegen sollte für eine forensische Analyse ein anderes Packet-Sniffer Programm verwendet werde. Wireshark bietet z.B. die Möglichkeit die mit tcpdump erstellen Log-Dateien zu öffnen und bestimmte Filter darauf anzuwenden. Die Kriterien, die dabei beachtet werden sollten, hängen wieder vom eigentlichen Ziel der Analyse ab.
+Der zeitliche Abstand verdächtiger Pakete kann Auskunft geben, ob ein Angriff automatisch oder manuell stattfand. Häufig sind Angriffe, die innerhalb von kurzen Zeitintervallen stattfinden, automatisiert. Außerdem sollte auf die Paketgröße geachtet werden. Kleine Pakete sind meist Handshake- Broadcast- oder Protocol-overhead Pakete, und können (je nach zu analysierenden Angriff) ignoriert werden. 
 
 Nachdem die Pakete nach den gewünschten Kriterien gefiltert wurden, kann versucht werden ein Muster aus den verschiedenen Paketen zu erkennen.\\
 
@@ -20,3 +22,5 @@ Nachdem die Pakete nach den gewünschten Kriterien gefiltert wurden, kann versuc
   \caption{Packet-Sniffer Wireshark }
   \label{ws}
 \end{figure}
+
+\noindent Honeypots verwenden meist ein weiteres Packet-Sniffer Programm in Form eines IDS (Vgl. Kapitel 6.1.2). Diese werden hauptsächlich dafür benutzt, um den Anwender bei bösartigen Aktivitäten zu warnen. Bekannte Angriffe können dabei schon im Voraus aussortiert werden.

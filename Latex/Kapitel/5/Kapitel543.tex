@@ -3,3 +3,18 @@ Bei der Analyse des Dateisystems kann festgestellt werden welche Dateien hinzuge
 
 Eine effektivere Lösung bietet das \emph{"hashen"} von Dateien. Beim hashen werden große Ursprungsdaten auf eine kleine Datenmenge abgebildet. Ändert sich die eigentliche Datei nur minimal, ändert sich auch der darüber gebildete Hashwert. So kann, wenn man über den ursprüngliche Hashwert verfügt, über einen Vergleich des alten und des neuen Hashwerts überprüfen, ob sich eine Datei verändert hat. 
 Über jede Datei des Honeypots sollte vor Produktivschaltung ein Hashwert gebildet werden. Dies kann über verschiedenen kostenfreie Anwendungen stattfinden. Ein Beispiel dafür ist FileCheckMD5. Dieses Scannt rekursiv Verzeichnisse und bildet Hashwerte über die beinhalteten Dateien. Die Werte werden dabei gespeichert und können für die spätere Überprüfung verwendet werden.
+
+Hacker versuchen ihre Daten meist zu verstecken. Werden diese mit der normalen Windows Funktion \emph{"verstecke"} versteckt, so können diese recht leicht wiedergefunden werden. Angreifer versuchen meist ihre Dateien in eine versteckte, read-only oder Systemdatei zu speichern, da diese nicht sofort erkannt werden können. Über einfache Konsolen-befehle werden diese jedoch wieder sichtbar. Es existieren auch unterstützende Programme die die Suche nach versteckten Dateien erleichtern. HFind z.B. listet alle versteckte und System Dateien zusammen mit dem Datum, an dem die Daten zuletzt verändert wurden, auf.
+
+Eine weitere Möglichkeit der Hacker ihre Daten zu verstecken, ist die Abspeicherung in dem s.g. Slack-Space. Dieser Raum entsteht wenn eine Datei ein Datencluster auf der Festplatte nicht komplett ausnutzt. In diesem Leerraum können bösartige Dateien gespeichert werden, die ohne ein zusätzliches Festplatten-Analyse-Tools nicht erkannt werden können. Beispiele hierfür sind:
+
+\begin{itemize}
+\item Disk Investigator: Ein kostenloses Tool, welches die Rohdaten einer Festplatte nach bestimmten Mustern oder Textstrings durchsuchen kann.
+\item Symantecs Norton System Utilities: Eine kostenpflichtige Variante mit mehr Möglichkeiten und Komfortfunktionen.
+\end{itemize} 
+
+\noindent Ein weiteres Merkmal, auf das besonders bei Windows Systemen geachtet werden sollte, ist das Datei-Endungen nicht mit der eigentlichen Funktion des Programmes übereinstimmen müssen. Hacker benutzen dies meist um ihre Opfer auszutricksen. So kann eine ausführbare .exe Datei als .zip getarnt werden, oder eine einfache .txt als .SYS.
+
+Selbst wenn ein System zunächst den Anschein macht, nicht verändert worden zu sein, kann ein Angreifer seine temporär hinterlegten Daten, nach Ausführung der eigentlichen Aktion, löschen. Um gelöschte Daten wiederherzustellen gibt es eine Vielzahl von Tools, die dieses ermöglichen.  \\
+
+\noindent Nachdem nun das Dateisystem nach veränderten oder neu hinzugefügten Daten analysiert wurde, kann mit der Analyse der Veränderungen oder des Schadcodes begonnen werden. 

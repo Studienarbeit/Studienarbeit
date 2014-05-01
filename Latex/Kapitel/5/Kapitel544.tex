@@ -1,0 +1,25 @@
+\subsection{Analyse des Schadcodes und des Betriebssystems}
+Abhängig von der modifizierten Datei oder des modifizierten Systems können nun verschiedene Arten der weiteren Analyse folgen.\\
+
+\noindent\textbf{Analyse von Schadcode}\\
+\noindent Bei der Analyse von hinzugekommenen oder modifizierten Dateien können je nach Dateiart verschiedenen Analysemethoden verwendet werden. Bei einer einfachen Textdatei kann mit einer String Analyse begonnen werden. Dabei kann nach im Hacker-Jargon oft vorkommende Begriffe wie "warez" oder "greetz" gesucht werden. Wir ein solches Wort gefunden kann davon ausgegangen werden das es von einem Hacker stammt\cite{grimes.2003a}. Unter Linux mit grep, oder Windows mit der bestehenden Windows-Suche kann eine solche Analyse stattfinden. Es gibt jedoch zusätzlich Tools die eine Suche weiterhin spezifizieren werden kann. Zum Beispiel mit Strings.exe der Sysinternale Suite von Microsoft kann nach ASCII oder Unicode Strings gesucht werden. \\
+
+\noindent Ist die verdächtige Datei ausführbar, wird die Analyse des dazugehörigen Assemblercodes herangezogen. Diese Analyseart ist jedoch sehr aufwendig und sollte nur durchgeführt werden, wenn die genaue Vorgehensweise der Datei von Interesse ist. Die meisten hinterlegten ausführbaren Dateien sind in Script-Sprachen geschrieben und oft vollständig kompiliert. Eine Disassemblierung des Codes kann durch verschiedenen Tools stattfinden (z.B. IDA Pro als kostenfreie oder kostenpflichtige Version), eine Analyse des daraus entstehenden Assemblercodes kann meist nur mit sehr guten Kenntnissen der Assemblersprache stattfinden. Es besteht auch die Möglichkeit die Datei an einen Sicherheitsfirma wie McAffee oder Symantec zu schicken \cite{grimes.2003a}. Diese senden meist innerhalb einer Woche eine Rückmeldung zurück ob die Datei boshaft war, oder nicht.\\  
+
+\noindent\textbf{Analyse des Betriebssystems}\\
+Auch ohne eine Datei geändert oder hinzugefügt zu haben, kann der Hacker das System für spätere Angriffe verwundbar gemacht haben. Sie könnten Passwörter entfernt, anfällige Anwendungen geöffnet (Ports), oder andere Anpassungen vorgenommen haben. Es gibt einige Tools die ein komplette Systemkonfiguration für einen späteren Vergleich speichern:
+
+\begin{itemize}
+\item Winfingerprint: Winfingerprint scannt IP-Adressen und sammelt spezifische Informationen zu den gefundenen PCs. Damit kann überprüft werden, welche Daten das System nach außen verrät. Der Scanner erkennt das eingesetzte Betriebssystem einschließlich installierter Service Packs, Datei- und Druckerfreigaben, vorhandene Laufwerke, System-ID, Benutzer, Domäne oder Arbeitsgruppe und Dienste (freigeschaltet Ports) des PCs.
+\item WinInterrogate: Wininterrogate ist ein Programm für die Anzeige, Überwachung und Katalogisierung von Prozessen. Es listet alle Prozesse und die zugehörigen DLLs auf oder listet alle DLLs auf und ihre Prozesszugehörigkeiten.
+\end{itemize}
+
+\noindent Eine Kombination dieser beiden Tools stellt die Grundlage einer Analyse des Betriebssystems dar. Nun kann noch nach weiteren Änderungen gesucht werden:
+
+\begin{itemize}
+\item Unter Windows sollten Änderungen in der Registry betrachtet werden (Besonders die Autorun-Schlüssel)
+\item Neue auffällige Prozesse sollten genauer untersucht werden
+\item Geöffnete Ports und deren zugewiesene Dienste sollten überprüft werden
+\end{itemize} 
+
+\noindent Nachdem das Betriebssystem und Dateien nach auffälligen Änderungen durchsucht wurde, ist es an der Zeit die richtigen Schlüsse daraus zu ziehen.
