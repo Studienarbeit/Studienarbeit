@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{WebGenIII.2006b}
+{\sc Allen~Harper, E.~B.}: {\em GenIII Honeynets: The birth of roo\/}.
+\newblock \url{
+  http://www.blackhat.com/presentations/bh-usa-05/bh-us-05-harper.pdf}.
 
 \bibitem{tannensbaum.2012a}
 {\sc Andrew S.~Tanenbaum, P. D. J.~W.}: {\em Computernetzwerke\/}.
@@ -34,7 +39,11 @@
 \bibitem{WebGenI.2006b}
 {\sc Unbekannt}: {\em Honeynet Technology 1st Generation (GenI)\/}.
 \newblock
-  \url{http://homes.cerias.purdue.edu/~kaw/research/honeynet/HoneynetTutorial/bibliography.html},
-  2006.
+  \url{http://homes.cerias.purdue.edu/~kaw/research/honeynet/HoneynetTutorial/bibliography.html}.
+
+\bibitem{WebGenII.2006b}
+{\sc Unbekannt}: {\em Honeynet Technology 2nd Generation (GenII)\/}.
+\newblock
+  \url{http:http://homes.cerias.purdue.edu/~kaw/research/honeynet/HoneynetTutorial/honeynet/gen2.html}.
 
 \end{thebibliography}
