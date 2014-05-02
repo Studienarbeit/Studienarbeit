@@ -1,5 +1,19 @@
-\subsection{High-Interactive}
-Bei High-Interactive Honeypots werden alle Dienste und Software "real" verwendet. Alle Anwendungen, Ports und alle Schichten des OSI-Modells werden dem Angreifer zur Verfügung gestellt. Diese Variante wird häufig dazu verwendet, um manuellen Hackern das Gefühl zu geben, in einen echten Server oder Computer eingedrungen zu sein. Die Überwachungsroutinen befinden sich dabei meist im Betriebssystem Kernel, um ein Entdecken des Honeypots zu erschweren. Der Vorteil dieser Methode ist, dass der Hacker alle Möglichkeiten besitzt, sein Ziel zu erreichen. Somit kann das meiste forensische Material gesammelt werden. Jedoch hat diese vollkommene Freiheit des Hackers den Nachteil, dass es für ihn leichter ist, in das Produktivsystem einzudringen. 
+\subsection{Low-Interactive}
+Low-Interaction Honeypots sind meist am einfachsten zu Installieren, Konfigurieren und zu Warten. Sie emulieren nur bestimmte Services. Dem Hacker wird beim Zugriff eines Services der korrekte Banner angezeigt, kann seine Login-Versuche durchführen (ev. über Brute Force Angriffe), wird jedoch nie erfolgreich sein, da es sich um kein reales Betriebssystem handelt. Die Vorgehensweise des Hacker bei der Anmeldung kann so aufgezeichnet werden. 
 
-Diese Art der Implementierung findet sich meist bei der Anwendung von Honeynets (vlg. Kapitel 2). Der Implementierungsaufwand bei High-Interaction Honeypots ist wesentlich höher als bei anderen Implementierungsarten, da nach einer erfolgreichen Kompromittierung das komplette System neu aufgesetzt werden muss.
+Das primäre Ziel eines Low-Interaction Honeypots besteht darin, unautorisierte Port-Scans oder Verbindungsversuche zu entdecken. Ein Low-Interactive Honeypot wird meist über eine Anwendung emuliert (z.B. honeyd), und kann somit leicht auf einem Host-System installiert werden. Da es sich bei dieser Implementierungsart um eine Emulation bestimmter Angriffsschnittstellen handelt muss nach einer versuchten Kompromittierung auch kein Betriebssystem vollständig neu aufgesetzt werden. Dadurch wird der Wartungsaufwand im Vergleich zu High-Interactive Honeypots erheblich vermindert.
+
+Low-Interaction Honeypots haben durch die zuvor genannten Gegebenheiten auch das geringste Risiko. Da kein wirkliches Betriebssystem dem Hacker zur Verfügung gestellt wird, kann dieser nicht auf andere Rechner zugreifen. 
+
+Die Informationssammlung eines Low-Interactive Honeypots ist im Vergleich zu den anderen Interaktionsgraden gering. Die Informationen beschränken sich auf die Services, auf die der Angreifer versucht zuzugreifen. Der genaue Angriff sowie das eigentliche vorgehen des Hackers werden nicht erkannt. Die wichtigsten Informationen, die ein Low Interactive Honeypot sammeln kann sind\cite{spitzner.2002a}:
+
+\begin{itemize}
+\item Datum und Zeitpunkt des Angriffes
+\item Quellport und Quelladresse des Angreifers
+\item Ziel-IP Adresse und Zielport des Angreifers
+\end{itemize}
+
+\noindent Welche weitere Aktionen aufgezeichnet werden können hängt vom verwendeten Low-Interactive Honeypot ab.
+Low-Interactive Honeypots wurden für bekannte Angriffsmuster entwickelt. Für unbekannte Vorgehensweisen eignet sich dieser nicht. 
+
 

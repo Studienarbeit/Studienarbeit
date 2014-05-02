@@ -1,7 +1,26 @@
 \section{Typen von Honeypots}
-Die Funktionsweise von Honeypots ist von der Implementierungsart abhängig. Dabei spielt der gewünschte Grad der Interaktion, sowie der Zweck des Honeypots eine Rolle (Research oder Production). Je nach Anwendungsgebiet wird die dafür nützlichste Implementierung verwendet. Grundlegend wird dabei zwischen folgenden Implementierungsmöglichkeiten unterschieden:
+Die Funktionsweise von Honeypots ist von der Implementierungsart abhängig. Dabei spielt der gewünschte Grad der Interaktion, sowie der Zweck des Honeypots eine Rolle (Research oder Production). Je nach Anwendungsgebiet wird die dafür nützlichste Implementierung verwendet. Grundlegend wird dabei zwischen folgenden Implementierungsmöglichkeiten unterschieden:\\
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+\caption{Interaktionsgrade mit den zugehörigen Eigenschaften\cite{spitzner.2002a}}
+\label{interTab}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline
+   \textbf{Interaktions-} & \textbf{Installation und} & \textbf{Aufstellung und} & \textbf{Informations-} & \textbf{Risiko}\\ 
+   \textbf{ möglichkeit}  & \textbf{Konfiguration}    & \textbf{Wartung}         & \textbf{sammlung}      &            \\ \hline  
+   \textbf{         Low}  & Einfach                   & Einfach                  & Limitiert              & Gering\\ \hline
+   \textbf{      Medium}  & Kompliziert               & Kompliziert              & Variabel               & Medium\\ \hline
+   \textbf{        High}  & Schwierig                 & Schwierig                & Umfangreich            & Hoch\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\noindent Wie in Tabelle \ref{interTab} zu erkennen ist, steigt das Risiko mit erhöhter Interaktionsstufe, jedoch steigt auch gleichzeitig die Menge an Daten die gesammelt werden können. Im Folgendem wird genauer auf die verschiedenen Implementierungsarten eingegangen.
+\newpage
 
 \input{Kapitel/4/Kapitel411.tex}
+\input{Kapitel/4/Kapitel414.tex}
 \input{Kapitel/4/Kapitel412.tex}
 \input{Kapitel/4/Kapitel413.tex}
 

@@ -5,22 +5,22 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Research Honeypot - Variante II\relax }}{10}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Production Honeypot\relax }}{11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces GenI Honeynet\relax }}{18}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces GenII Honeynet\relax }}{20}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces GenI Honeynet\relax }}{23}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces GenII Honeynet\relax }}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Kommunikation \IeC {\"u}ber das OSI-Schichtenmodell\relax }}{28}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Drei-Wege-Handshake mit TCP\relax }}{29}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Einstellungen f\IeC {\"u}r RAM-Seicher Dmp-File\relax }}{33}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Erstellung eines Speicherabbilds mit dd\relax }}{34}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Packet-Sniffer Wireshark \relax }}{35}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Kommunikation \IeC {\"u}ber das OSI-Schichtenmodell\relax }}{30}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Drei-Wege-Handshake mit TCP\relax }}{31}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Einstellungen f\IeC {\"u}r RAM-Seicher Dmp-File\relax }}{35}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Erstellung eines Speicherabbilds mit dd\relax }}{36}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Packet-Sniffer Wireshark \relax }}{37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Abfangen der Daten durch Sebek\cite {project.2003b}\relax }}{40}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Zugriff auf Netzwerk Driver\cite {project.2003b}\relax }}{40}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Ablauf einer Sebek-\IeC {\"U}berwachung\cite {project.2003b}\relax }}{41}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Beispielkonfiguration einer Honeyd Config-Datei\relax }}{43}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Abfangen der Daten durch Sebek\cite {project.2003b}\relax }}{42}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Zugriff auf Netzwerk Driver\cite {project.2003b}\relax }}{42}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Ablauf einer Sebek-\IeC {\"U}berwachung\cite {project.2003b}\relax }}{43}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Beispielkonfiguration einer Honeyd Config-Datei\relax }}{45}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Erst Testkonfiguration mit Honeyd\relax }}{47}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Zweite Testkonfiguration mit Honeyd\relax }}{47}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Erst Testkonfiguration mit Honeyd\relax }}{49}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Zweite Testkonfiguration mit Honeyd\relax }}{49}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,0 +1,14 @@
+\subsection{Medium-Interactive}
+Medium-Interactive Honeypots bieten dem Angreifer mehr Freiheiten als Low-Interactive Honeypots, jedoch weniger als High-Interactive Honeypots. Ein Medium-Interactive Honeypot emuliert ähnlich wie ein Low-Interactive Honeypot Dienste, mit denen sich der Angreifer verbinden kann. Diese geben nun jedoch die korrekte Funktionalität des emulierten Systems wieder\cite{spitzner.2002a}. 
+
+Zum Beispiel ein Microsoft IIS Web Server bietet alle Möglichkeiten der Interaktion, die ein wirklicer IIS Server zur Verfügung stellen würde. Ein Low-Interacitve Honeypot würde in diesem Fall nur den HTTP-Banner nach Zugriff auf den HTTP-Port anzeigen. Der Angreifer hat nun die Möglichkeit z.B. Trojaner, Würmer oder Viren hochzuladen. Diese können für spätere Analysen verwendet werden. Eine Gefahr besteht für das System nicht, da dem Hacker wieder kein vollständiges Betriebssystem zur Verfügung gestellt wird\cite{spitzner.2002a}.
+
+Eine andere Möglichkeit zur Erstellung eines Medium-Interactive Honeypot besteht darin, die Funktion jail oder chroot von Unix zu benutzen. Dabei wird ein Betriebssystem partitioniert, indem eine virtuelle Betriebssystemumgebung geschaffen wird, die von einem echten Betriebssystem kontrolliert wird. Ziel ist es nun den Angreifer auf das virtuelle Betriebssystem zu locken, und ihm vom echten Betriebssystem aus zu beobachten\cite{spitzner.2002a}. \\
+
+Medium-Interactive Honeypots haben jedoch einige Probleme. Die Komplexität der Honeypots steigt mit den Möglichkeiten diese zu Konfigurieren. Ein komplettes System zu emulieren  und richtig zu konfigurieren erfordert sehr gute Kenntnisse des Systems selbst. Je besser dieses emuliert wird, desto leichter kann es dem Hacker fallen auf das Host-System überzugreifen, was das Risiko eines Medium-Interactive Honeypot erhöht\cite{spitzner.2002a}.
+Medium-Interactive Honeypots benötigen meist mehr Zeit für die Installation und Konfiguration, da mehrere Möglichkeiten beachtet werden müssen. Zudem gibt es keine fertigen Honeypot-Systeme zur Installation. Einen kompletten Microsoft IIS Web-Server zu emulieren erfordert einen sehr hohen Aufwand\cite{spitzner.2002a}.
+Jedoch erhöht sich im Vergleich zu Low-Interactive Honeypots die Anzahl der gesammelten Daten erheblich. Statt nur Verbindungsversuche kann nun die tatsächliche Payload von Paketen (wie z.B. Würmer) und Benutzeraktivitäten aufgezeichnet werden\cite{spitzner.2002a}.
+
+Der Medium-Honeypot besitzt zwar ein größeres Risiko und einen größeren Erstellungsaufwand, jedoch besitzt er auch die Möglichkeit wichtige Informationen bezüglich des eigentlichen Angriffsversuchs des Hackers zu erkennen\cite{spitzner.2002a}.
+
+

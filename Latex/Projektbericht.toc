@@ -12,55 +12,56 @@
 \contentsline {section}{\numberline {2.3}Rechtliche Grundlage}{13}
 \contentsline {subsection}{\numberline {2.3.1}Zivil- und Strafrecht}{13}
 \contentsline {subsection}{\numberline {2.3.2}Datenschutz}{14}
-\contentsline {chapter}{\numberline {3}Honeynets}{15}
-\contentsline {section}{\numberline {3.1}Anforderungen eines Honeynets}{15}
-\contentsline {section}{\numberline {3.2}Architektur eines Honeynets}{17}
-\contentsline {subsection}{\numberline {3.2.1}GenI Honeynet}{17}
-\contentsline {subsection}{\numberline {3.2.2}GenII und GenIII Honeynets}{20}
-\contentsline {chapter}{\numberline {4}Implementierungsarten}{23}
-\contentsline {section}{\numberline {4.1}Typen von Honeypots}{23}
-\contentsline {subsection}{\numberline {4.1.1}High-Interactive}{23}
-\contentsline {subsection}{\numberline {4.1.2}Low-Interactive}{23}
-\contentsline {subsection}{\numberline {4.1.3}Virtualisierung}{24}
-\contentsline {section}{\numberline {4.2}Risiken}{25}
-\contentsline {chapter}{\numberline {5}Hacking und Forensische Analyse}{26}
-\contentsline {section}{\numberline {5.1}Definition von Hacking}{26}
-\contentsline {section}{\numberline {5.2}Grundlagen von Netzwerkhacks}{27}
-\contentsline {subsection}{\numberline {5.2.1}Netzkommunikation}{27}
-\contentsline {subsection}{\numberline {5.2.2}Netzwerkprotokolle}{28}
-\contentsline {section}{\numberline {5.3}Angriffsszenarien}{30}
-\contentsline {section}{\numberline {5.4}Datenanalyse}{30}
-\contentsline {subsection}{\numberline {5.4.1}Dateien sichern}{32}
-\contentsline {subsection}{\numberline {5.4.2}Netzwerkanalyse}{34}
-\contentsline {subsection}{\numberline {5.4.3}Analyse des Dateisystems}{35}
-\contentsline {subsection}{\numberline {5.4.4}Analyse des Schadcodes und des Betriebssystems}{36}
-\contentsline {subsection}{\numberline {5.4.5}Abschlie\IeC {\ss }ende Schlussfolgerung}{38}
-\contentsline {chapter}{\numberline {6}Tools und Anwendungen}{39}
-\contentsline {section}{\numberline {6.1}Honeypot und Honeynet Tools}{39}
-\contentsline {subsection}{\numberline {6.1.1}Sebek}{39}
-\contentsline {subsection}{\numberline {6.1.2}Intrusion Detection System}{41}
-\contentsline {section}{\numberline {6.2}Honeypot Software}{42}
-\contentsline {subsection}{\numberline {6.2.1}Honeyd}{43}
-\contentsline {subsection}{\numberline {6.2.2}Tiny oder Tarpit}{44}
-\contentsline {subsection}{\numberline {6.2.3}Roo}{44}
-\contentsline {subsection}{\numberline {6.2.4}High-Interactive?}{44}
-\contentsline {section}{\numberline {6.3}Anwendungen zur Datenanalyse}{44}
-\contentsline {subsection}{\numberline {6.3.1}Honey View}{44}
-\contentsline {subsection}{\numberline {6.3.2}...}{44}
-\contentsline {chapter}{\numberline {7}Implementierung des Honeypots}{45}
-\contentsline {section}{\numberline {7.1}Systemspezifikationen}{45}
-\contentsline {section}{\numberline {7.2}Honeyd Implementierung}{46}
-\contentsline {subsection}{\numberline {7.2.1}Installation}{46}
-\contentsline {subsection}{\numberline {7.2.2}Konfiguration und Inbetriebnahme}{46}
-\contentsline {subsection}{\numberline {7.2.3}Datenanalyse}{48}
-\contentsline {section}{\numberline {7.3}Kommerzielle Implementierung}{48}
-\contentsline {subsection}{\numberline {7.3.1}Installation}{48}
-\contentsline {subsection}{\numberline {7.3.2}Konfiguration}{48}
-\contentsline {subsection}{\numberline {7.3.3}Datenanalyse}{48}
-\contentsline {section}{\numberline {7.4}Open Source Implementierung}{48}
-\contentsline {subsection}{\numberline {7.4.1}Installation}{48}
-\contentsline {subsection}{\numberline {7.4.2}Konfiguration}{48}
-\contentsline {subsection}{\numberline {7.4.3}Datenanalyse}{48}
-\contentsline {chapter}{\numberline {8}Auswertung der gesammelten Daten}{49}
-\contentsline {chapter}{\numberline {9}Fazit}{50}
-\contentsline {chapter}{Literaturverzeichnis}{51}
+\contentsline {chapter}{\numberline {3}Implementierungsarten}{15}
+\contentsline {section}{\numberline {3.1}Typen von Honeypots}{15}
+\contentsline {subsection}{\numberline {3.1.1}Low-Interactive}{16}
+\contentsline {subsection}{\numberline {3.1.2}Medium-Interactive}{16}
+\contentsline {subsection}{\numberline {3.1.3}High-Interactive}{17}
+\contentsline {subsection}{\numberline {3.1.4}Virtualisierung}{18}
+\contentsline {section}{\numberline {3.2}Risiken}{19}
+\contentsline {chapter}{\numberline {4}Honeynets}{20}
+\contentsline {section}{\numberline {4.1}Anforderungen eines Honeynets}{20}
+\contentsline {section}{\numberline {4.2}Architektur eines Honeynets}{22}
+\contentsline {subsection}{\numberline {4.2.1}GenI Honeynet}{22}
+\contentsline {subsection}{\numberline {4.2.2}GenII und GenIII Honeynets}{25}
+\contentsline {chapter}{\numberline {5}Hacking und Forensische Analyse}{28}
+\contentsline {section}{\numberline {5.1}Definition von Hacking}{28}
+\contentsline {section}{\numberline {5.2}Grundlagen von Netzwerkhacks}{29}
+\contentsline {subsection}{\numberline {5.2.1}Netzkommunikation}{29}
+\contentsline {subsection}{\numberline {5.2.2}Netzwerkprotokolle}{30}
+\contentsline {section}{\numberline {5.3}Angriffsszenarien}{32}
+\contentsline {section}{\numberline {5.4}Datenanalyse}{32}
+\contentsline {subsection}{\numberline {5.4.1}Dateien sichern}{34}
+\contentsline {subsection}{\numberline {5.4.2}Netzwerkanalyse}{36}
+\contentsline {subsection}{\numberline {5.4.3}Analyse des Dateisystems}{37}
+\contentsline {subsection}{\numberline {5.4.4}Analyse des Schadcodes und des Betriebssystems}{38}
+\contentsline {subsection}{\numberline {5.4.5}Abschlie\IeC {\ss }ende Schlussfolgerung}{40}
+\contentsline {chapter}{\numberline {6}Tools und Anwendungen}{41}
+\contentsline {section}{\numberline {6.1}Honeypot und Honeynet Tools}{41}
+\contentsline {subsection}{\numberline {6.1.1}Sebek}{41}
+\contentsline {subsection}{\numberline {6.1.2}Intrusion Detection System}{43}
+\contentsline {section}{\numberline {6.2}Honeypot Software}{44}
+\contentsline {subsection}{\numberline {6.2.1}Honeyd}{45}
+\contentsline {subsection}{\numberline {6.2.2}Tiny oder Tarpit}{46}
+\contentsline {subsection}{\numberline {6.2.3}Roo}{46}
+\contentsline {subsection}{\numberline {6.2.4}High-Interactive?}{46}
+\contentsline {section}{\numberline {6.3}Anwendungen zur Datenanalyse}{46}
+\contentsline {subsection}{\numberline {6.3.1}Honey View}{46}
+\contentsline {subsection}{\numberline {6.3.2}...}{46}
+\contentsline {chapter}{\numberline {7}Implementierung des Honeypots}{47}
+\contentsline {section}{\numberline {7.1}Systemspezifikationen}{47}
+\contentsline {section}{\numberline {7.2}Honeyd Implementierung}{48}
+\contentsline {subsection}{\numberline {7.2.1}Installation}{48}
+\contentsline {subsection}{\numberline {7.2.2}Konfiguration und Inbetriebnahme}{48}
+\contentsline {subsection}{\numberline {7.2.3}Datenanalyse}{50}
+\contentsline {section}{\numberline {7.3}Kommerzielle Implementierung}{50}
+\contentsline {subsection}{\numberline {7.3.1}Installation}{50}
+\contentsline {subsection}{\numberline {7.3.2}Konfiguration}{50}
+\contentsline {subsection}{\numberline {7.3.3}Datenanalyse}{50}
+\contentsline {section}{\numberline {7.4}Open Source Implementierung}{50}
+\contentsline {subsection}{\numberline {7.4.1}Installation}{50}
+\contentsline {subsection}{\numberline {7.4.2}Konfiguration}{50}
+\contentsline {subsection}{\numberline {7.4.3}Datenanalyse}{50}
+\contentsline {chapter}{\numberline {8}Auswertung der gesammelten Daten}{51}
+\contentsline {chapter}{\numberline {9}Fazit}{52}
+\contentsline {chapter}{Literaturverzeichnis}{53}
